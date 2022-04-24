@@ -140,6 +140,7 @@ a#downloadBtn div:focus {
   color: white;
   font-weight: 500;
   border-bottom: 3px solid #0472b2b3;
+  cursor: pointer;
 }
 .loadBtn {
   text-align: center;
