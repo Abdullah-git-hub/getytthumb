@@ -30,23 +30,38 @@
 // }
 
 const ytLink = document.getElementById("ytLink"),
+linkForm = document.querySelector("#linkForm"),
 prevBox = document.querySelector(".prevBox"),
 prevBoxIcon = document.querySelector(".prevBox .icons"),
 downloadBtn = document.getElementById("downloadBtn"),
-prevImg = document.querySelector(".prevBox img");
+prevImg = document.querySelector(".prevBox img"),
+loadBtn = document.querySelector(".loadBtn button");
+
+loadBtn.onclick = function(){
+    // console.log(this.value)
+    if(ytLink.value != ""){
+        prevBox.classList.add("showPrev");
+        downYtThumb()
+    }else{
+        prevBox.classList.remove("showPrev");
+        // console.log();
+    }
+    // e.preventdefault()
+}
 
 ytLink.onkeyup = function(){
     // console.log(this.value)
-    if(this.value != ""){
+    if(ytLink.value != ""){
         prevBox.classList.add("showPrev");
-        downYtThumb(this.value)
+        downYtThumb()
     }else{
         prevBox.classList.remove("showPrev");
-        console.log(this.value);
+        // console.log();
     }
+    // e.preventdefault()
 }
 
-function downYtThumb(link){
+function downYtThumb(){
     let data = ytLink.value;
     if(data.indexOf("watch?") != -1 && data.indexOf("youtube.com") != -1){
 
